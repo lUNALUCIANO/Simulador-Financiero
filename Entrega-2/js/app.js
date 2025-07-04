@@ -7,10 +7,12 @@ if (localStorage.getItem("clientes")) {
 }
 
 
-function Cliente(nombre, email) {
-    this.nombre = nombre
-    this.email = email
-    this.deuda = 0
+class Cliente {
+    constructor (nombre, email) {
+      this.nombre = nombre
+      this.email = email
+      this.deuda = 0
+}
 }
 
 function guardarStorage() {
@@ -46,7 +48,11 @@ document.getElementById("btnAgregarCliente").addEventListener("click", function(
         guardarStorage()
         mostrarClientes()
     }
-});
+})
+
+
+
+
 
 
 function tomarPrestamo(indice) {
@@ -82,6 +88,7 @@ mostrarClientes()
 
 
 
+
 let titulo = document.getElementById("titulo")
 titulo.innerHTML = "<h1>Simular Financiero</h1>"
 titulo.className = "titulo"
@@ -91,4 +98,6 @@ let subtitulo = document.getElementById("subtitulo")
 subtitulo.innerHTML =  "<h2>Clientes Registrados</h2>"
 subtitulo.className = "subtitulo"
 
-
+let titulos = document.getElementById("titulos")
+titulos.innerHTML ="<h3>Informacion de los Clientes </h3>"
+titulos.className ="titulos"
