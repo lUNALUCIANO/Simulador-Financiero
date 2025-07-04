@@ -22,7 +22,11 @@ function guardarStorage() {
 function mostrarClientes() {
     let contenedor = document.getElementById("listaClientes")
     contenedor.innerHTML = ""
-
+    listaClientes.sort((a, b) => {
+        if (a.nombre.toLowerCase() < b.nombre.toLowerCase()) return -1;
+        if (a.nombre.toLowerCase() > b.nombre.toLowerCase()) return 1;
+        return 0;
+    });
     listaClientes.forEach(function(cliente, index) {
         let div = document.createElement("div")
         div.className = "cliente"
